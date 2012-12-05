@@ -1,6 +1,15 @@
+var previous = [];
+
+$(function(){
+    previous.push( $('#pages').find('.start').prop('id') );
+});
 
 
-function goto(destination, forward, scrollToTop){
+function goto(destination, forward){
+
+    if(destination == null){
+        destination = previous.pop();
+    }
 
     var pages = $('#pages');
 
@@ -14,15 +23,23 @@ function goto(destination, forward, scrollToTop){
 
     //Select the current and target page
     var current = pages.children('.page_in_forward, .page_in_backward, .start');
-    var target  = pages.children('.page_'+destination);
+    var target  = pages.children('#'+destination);
+
+    if(forward){
+        //Add the current page to the stack of previous pages
+        previous.push(current.prop('id'));
+    }
 
     //Clean up old classes so they don't mess up this new transition
     pages.children().removeClass('start page_in_forward page_in_backward page_out_forward page_out_backward');
 
-    //Scroll the target page to its top
-    if(scrollToTop){
-        target.prop({ scrollTop: 0 });
+    if(forward){
+        //Scroll the target page to its top
+        target.find('article').find('ul, div').prop({ scrollTop: 0 });
     }
+
+    //Hide the options pop-out
+    $('#options').hide();
 
     //Hide the current page
     current.addClass(page_out);
@@ -40,21 +57,25 @@ function goto(destination, forward, scrollToTop){
     //Older browsers need a hand (this could be done in CSS but that would screw up the animated transitions for newer browsers)
     if(!Modernizr.cssanimations){
         if(!forward){
-            current.css('z-index',  2);
-            target.css('z-index',     3);
+            current.css('z-index',  200);
+            target.css('z-index',   300);
         }
         else{
-            current.css('z-index',  2);
-            target.css('z-index',     3);
+            current.css('z-index',  200);
+            target.css('z-index',   300);
         }
     }
+}
+
+function options(){
+    $('#options').toggle();
 }
 
 $(function(){
 
     //If there is no support for CSS3 animations we'll have to show the login-page with javascript
-    if(!Modernizr.cssanimations){
-        var pages = $('#pages');
-        pages   .find('.page_in').css('opacity', 1).css('top', 0);
-    }
+//    if(!Modernizr.cssanimations){
+//        var pages = $('#pages');
+//        pages   .find('.page_in').css('opacity', 1).css('top', 0);
+//    }
 });

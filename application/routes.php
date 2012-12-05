@@ -34,11 +34,11 @@
 
 Route::get('/', function()
 {
-    return View::make('home.index');
+    return View::make('app.index');
 });
-Route::get('/demo', function()
+Route::get('/laravel', function()
 {
-    return View::make('home.demo');
+    return View::make('home.laravel');
 });
 
 Route::controller('api');

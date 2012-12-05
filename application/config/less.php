@@ -4,7 +4,7 @@ return array(
 
     ),
     'files' => array(
-        path('public') . 'css/demo.less' => path('public') . 'css/demo.css',
+        path('public') . 'css/style.less' => path('public') . 'css/style.css',
     ),
     'snippets' => array(
 

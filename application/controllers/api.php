@@ -35,13 +35,51 @@ class Api_Controller extends Base_Controller{
     }
 
     //Credential management
-    public function get_add_credential(){
-        return 'get_add_credential';
+    public function get_password(){
+
+        return Response::json(array(
+            array(
+                'id'        => 1,
+                'favourite' => true,
+                'service'   => 'Gmail',
+                'username'  => 'john.doe@gmail.com'
+            ),array(
+                'id'        => 2,
+                'favourite' => true,
+                'service'   => 'Gmail',
+                'username'  => 'janedoe@gmail.com'
+            ),array(
+                'id'        => 3,
+                'favourite' => true,
+                'service'   => 'Gmail',
+                'username'  => 'johndoe@gmail.com'
+            ),array(
+                'id'        => 4,
+                'favourite' => true,
+                'service'   => 'Outlook',
+                'username'  => 'john@outlook.com'
+            ),array(
+                'id'        => 5,
+                'favourite' => true,
+                'service'   => 'CMS',
+                'username'  => 'info@interactivestudios.nl'
+            ),array(
+                'id'        => 6,
+                'favourite' => true,
+                'service'   => 'Dashboard',
+                'username'  => 'sander@interactivestudios.nl'
+            ),array(
+                'id'        => 7,
+                'favourite' => true,
+                'service'   => 'Facebook',
+                'username'  => 'sanderverkuijlen'
+            )
+        ));
     }
-    public function get_update_credential(){
-        return 'get_update_credential';
+    public function put_password(){
+        return 'put_password';
     }
-    public function get_delete_credential(){
-        return 'get_delete_credential';
+    public function delete_password(){
+        return 'delete_password';
     }
 }
