@@ -35,6 +35,7 @@ class Api_Controller extends Base_Controller{
     }
 
     //Credential management
+    //Read
     public function get_password(){
 
         return Response::json(array(
@@ -76,9 +77,11 @@ class Api_Controller extends Base_Controller{
             )
         ));
     }
-    public function put_password(){
-        return 'put_password';
+    //Save
+    public function post_password(){
+        return Response::json(array());
     }
+    //Delete
     public function delete_password(){
         return 'delete_password';
     }

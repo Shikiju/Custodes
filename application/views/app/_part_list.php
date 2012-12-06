@@ -1,6 +1,6 @@
 <ul ng-controller="PasswordListCtrl" <?=($page != 'list' ? 'class="no_compact"' : '')?>>
     <li ng-repeat="password in passwords | orderBy:['-favourite','service','username']">
-        <a href="javascript:" class="favourite" ng-click="password.favourite = !password.favourite" ng-class="{checked: password.favourite}"></a>
+        <a href="javascript:" class="favourite" ng-click="favourite(password)" ng-class="{checked: password.favourite}"></a>
         <hgroup>
             <h2>{{password.service}}</h2>
             <h3>{{password.username}}</h3>
