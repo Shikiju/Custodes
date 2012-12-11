@@ -1,4 +1,4 @@
-<section ng-controller="LoginCtrl" ="login" class="wrapper <?=($start ? 'start' : '')?>">
+<section ng-controller="LoginCtrl" id="login" class="wrapper <?=($start ? 'start' : '')?>">
     <header>
         <span class="left">
         </span>
