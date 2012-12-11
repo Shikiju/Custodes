@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee57806e-8343-440f-9d74-0482736f62e1" name="Default" comment="- Many html/css tweaks; &#10;- Implemented AngularJS; &#10;- Split the view into maintainable partials;">
+    <list default="true" id="ee57806e-8343-440f-9d74-0482736f62e1" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/Password.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/app/_login.php" afterPath="$PROJECT_DIR$/application/views/app/_login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api.php" afterPath="$PROJECT_DIR$/application/controllers/api.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/password.php" afterPath="$PROJECT_DIR$/application/models/password.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/app.js" afterPath="$PROJECT_DIR$/public/js/app/app.js" />
     </list>
     <ignored path="Password.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,7 +48,7 @@
       <file leaf-file-name="_part_list.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/app/_part_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="5" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0">
+            <state line="10" column="5" selection-start="600" selection-end="600" vertical-scroll-proportion="-6.5384617">
               <folding />
             </state>
           </provider>
@@ -62,16 +57,7 @@
       <file leaf-file-name="_part_edit.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/app/_part_edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="43" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/style.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="284" column="11" selection-start="6037" selection-end="6037" vertical-scroll-proportion="0.0">
+            <state line="11" column="43" selection-start="376" selection-end="376" vertical-scroll-proportion="-7.1923075">
               <folding />
             </state>
           </provider>
@@ -86,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="22" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0">
+            <state line="101" column="0" selection-start="2927" selection-end="2927" vertical-scroll-proportion="0.7863555">
               <folding />
             </state>
           </provider>
@@ -98,16 +84,25 @@
       <file leaf-file-name="api.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="42" selection-start="1080" selection-end="1080" vertical-scroll-proportion="-0.65384614">
+            <state line="48" column="54" selection-start="1096" selection-end="1096" vertical-scroll-proportion="41.384617">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_login.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="password.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/password.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="10" selection-start="464" selection-end="464" vertical-scroll-proportion="-9.807693">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_login.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/app/_login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="37" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
+            <state line="2" column="27" selection-start="132" selection-end="132" vertical-scroll-proportion="-1.3076923">
               <folding>
                 <marker date="1355264070545" expanded="true" signature="103:324" placeholder="..." />
                 <marker date="1355264070545" expanded="true" signature="131:147" placeholder="..." />
@@ -147,7 +142,6 @@
         <option value="$PROJECT_DIR$/public/js/lib/angular-resource.min.js" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/models/credential.php" />
-        <option value="$PROJECT_DIR$/application/models/password.php" />
         <option value="$PROJECT_DIR$/public/js/app/modules.js" />
         <option value="$PROJECT_DIR$/public/css/style.less" />
         <option value="$PROJECT_DIR$/application/views/app/index.php" />
@@ -155,9 +149,10 @@
         <option value="$PROJECT_DIR$/application/views/app/_part_list.php" />
         <option value="$PROJECT_DIR$/application/views/app/_list.php" />
         <option value="$PROJECT_DIR$/application/views/app/_part_edit.php" />
+        <option value="$PROJECT_DIR$/application/views/app/_login.php" />
+        <option value="$PROJECT_DIR$/application/models/password.php" />
         <option value="$PROJECT_DIR$/application/controllers/api.php" />
         <option value="$PROJECT_DIR$/public/js/app/app.js" />
-        <option value="$PROJECT_DIR$/application/views/app/_login.php" />
       </list>
     </option>
   </component>
@@ -331,6 +326,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Password" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Password" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -432,7 +445,11 @@
       <created>1355261388035</created>
       <updated>1355261388035</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- Logout fix;">
+      <created>1355264085711</created>
+      <updated>1355264085711</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -461,21 +478,21 @@
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3420491" sideWeight="0.67071825" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3420491" sideWeight="0.67071825" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -516,7 +533,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Data service verder uitgewerkt; &#10;- Data consistentie opgelost;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Logout fix;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -534,6 +551,7 @@
     <MESSAGE value="- Many html/css tweaks; &#10;- Implemented AngularJS; &#10;- Split the view into maintainable partials;" />
     <MESSAGE value="- Angular save functionaliteit gelinked aan de api; &#10;- PasswordEditCtrl toegevoegd;" />
     <MESSAGE value="- Data service verder uitgewerkt; &#10;- Data consistentie opgelost;" />
+    <MESSAGE value="- Logout fix;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -554,28 +572,9 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/password.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="26" selection-start="83" selection-end="83" vertical-scroll-proportion="0.05971897" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="23" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.2587822" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/_part_edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="43" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/_part_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="5" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.less">
@@ -585,28 +584,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/lib.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="271" column="17" selection-start="5431" selection-end="5431" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/application.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="173" column="28" selection-start="5783" selection-end="5797" vertical-scroll-proportion="0.09892087" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app/app.js">
+    <entry file="file://$PROJECT_DIR$/application/views/app/_login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="22" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="2" column="27" selection-start="132" selection-end="132" vertical-scroll-proportion="-1.3076923">
+          <folding>
+            <marker date="1355264070545" expanded="true" signature="103:324" placeholder="..." />
+            <marker date="1355264070545" expanded="true" signature="131:147" placeholder="..." />
+            <marker date="1355264070545" expanded="true" signature="176:284" placeholder="..." />
+            <marker date="1355264070545" expanded="true" signature="338:896" placeholder="..." />
+            <marker date="1355264070545" expanded="true" signature="352:881" placeholder="..." />
+            <marker date="1355264070545" expanded="true" signature="909:956" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/_edit.php">
+    <entry file="file://$PROJECT_DIR$/application/views/app/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="-0.0">
+        <state line="54" column="54" selection-start="2234" selection-end="2239" vertical-scroll-proportion="-25.0">
           <folding />
         </state>
       </provider>
@@ -618,31 +617,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/app/_part_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="5" selection-start="600" selection-end="600" vertical-scroll-proportion="-6.5384617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="10" selection-start="464" selection-end="464" vertical-scroll-proportion="-9.807693">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/app/_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/app/_part_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="43" selection-start="376" selection-end="376" vertical-scroll-proportion="-7.1923075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/lib.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="271" column="17" selection-start="5431" selection-end="5431" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="42" selection-start="1080" selection-end="1080" vertical-scroll-proportion="-0.65384614">
+        <state line="48" column="54" selection-start="1096" selection-end="1096" vertical-scroll-proportion="41.384617">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/index.php">
+    <entry file="file://$PROJECT_DIR$/public/js/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="54" selection-start="2234" selection-end="2239" vertical-scroll-proportion="-25.0">
+        <state line="101" column="0" selection-start="2927" selection-end="2927" vertical-scroll-proportion="0.7863555">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="37" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1355264070545" expanded="true" signature="103:324" placeholder="..." />
-            <marker date="1355264070545" expanded="true" signature="131:147" placeholder="..." />
-            <marker date="1355264070545" expanded="true" signature="176:284" placeholder="..." />
-            <marker date="1355264070545" expanded="true" signature="338:896" placeholder="..." />
-            <marker date="1355264070545" expanded="true" signature="352:881" placeholder="..." />
-            <marker date="1355264070545" expanded="true" signature="909:956" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>

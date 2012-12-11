@@ -37,58 +37,49 @@ class Api_Controller extends Base_Controller{
         return 'get_remove_location';
     }
 
-    //Credential management
-    //Read
+    //Password CRUD
     public function get_password($id = null){
         $user_id = Input::get('user_id');
 
         if($user_id > 0){
-            if($id != null){
 
-                $password = Password::find($id);
-
-                if($password->user_id == $user_id){
-
-                    return Response::json(array(
-                        'id'        => $password->id,
-                        'service'   => $password->service,
-                        'username'  => $password->username,
-                        'password'  => $password->password,
-                        'notes'     => $password->notes,
-                        'favourite' => ($password->favourite ? true : false)
-                    ));
-                }
-            }
-            else{
+            //Get all
+            if($id == null){
 
                 $passwords = Password::where('user_id', '=', $user_id)->get();
 
                 $result = array();
                 /* @var $password Password */
                 foreach($passwords as $password){
-                    $result[] = array(
-                            'id'        => $password->id,
-                            'service'   => $password->service,
-                            'username'  => $password->username,
-                            'password'  => $password->password,
-                            'notes'     => $password->notes,
-                            'favourite' => ($password->favourite ? true : false)
-                        );
+                    $result[] = $password->toJson();
                 }
 
                 return Response::json($result);
+            }
+            //Get one
+            else{
+
+                $password = Password::where('id', '=', $id)->where('user_id', '=', $user_id)->first();
+
+                if($password != null){
+
+                    return Response::json($password->toJson());
+                }
             }
         }
 
         return Response::make('', 401);
     }
-    //Save
-    public function post_password($id){
 
-        $password   = Password::find($id);
+    public function post_password($id = null){
+        $user_id    = Input::get('user_id');
         $post       = json_decode(file_get_contents('php://input'));
 
-        if($password != null && $post instanceof StdClass){
+        var_dump($id);
+
+        //Create
+        if($id == null){
+            $password = new Password();
 
             foreach($post as $key => $val){
 
@@ -96,7 +87,6 @@ class Api_Controller extends Base_Controller{
 
                     //Don't update these:
                     case 'id':
-                    case 'user_id':
                         break;
 
                     //For everything else, there's default
@@ -105,14 +95,43 @@ class Api_Controller extends Base_Controller{
                         break;
                 }
             }
+            $password->user_id = $user_id;
 
             $password->save();
 
-            return Response::make('', 200);
+            return Response::json($password->toJson(), 200);
+        }
+        //Update
+        else{
+            $password = Password::where('id', '=', $id)->where('user_id', '=', $user_id)->first();
+
+            if($password != null && $post instanceof StdClass){
+
+                foreach($post as $key => $val){
+
+                    switch($key){
+
+                        //Don't update these:
+                        case 'id':
+                        case 'user_id':
+                            break;
+
+                        //For everything else, there's default
+                        default:
+                            $password->$key = $val;
+                            break;
+                    }
+                }
+
+                $password->save();
+
+                return Response::json($password->toJson(), 200);
+            }
         }
 
         return Response::make('', 403);
     }
+
     //Delete
     public function delete_password(){
         return 'delete_password';
