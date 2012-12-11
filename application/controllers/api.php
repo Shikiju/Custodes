@@ -1,4 +1,7 @@
 <?php
+use \Laravel\Input,
+    \Laravel\Response;
+
 class Api_Controller extends Base_Controller{
     public $restful = true;
 
@@ -36,50 +39,79 @@ class Api_Controller extends Base_Controller{
 
     //Credential management
     //Read
-    public function get_password(){
+    public function get_password($id = null){
+        $user_id = Input::get('user_id');
 
-        return Response::json(array(
-            array(
-                'id'        => 1,
-                'favourite' => true,
-                'service'   => 'Gmail',
-                'username'  => 'john.doe@gmail.com'
-            ),array(
-                'id'        => 2,
-                'favourite' => true,
-                'service'   => 'Gmail',
-                'username'  => 'janedoe@gmail.com'
-            ),array(
-                'id'        => 3,
-                'favourite' => true,
-                'service'   => 'Gmail',
-                'username'  => 'johndoe@gmail.com'
-            ),array(
-                'id'        => 4,
-                'favourite' => true,
-                'service'   => 'Outlook',
-                'username'  => 'john@outlook.com'
-            ),array(
-                'id'        => 5,
-                'favourite' => true,
-                'service'   => 'CMS',
-                'username'  => 'info@interactivestudios.nl'
-            ),array(
-                'id'        => 6,
-                'favourite' => true,
-                'service'   => 'Dashboard',
-                'username'  => 'sander@interactivestudios.nl'
-            ),array(
-                'id'        => 7,
-                'favourite' => true,
-                'service'   => 'Facebook',
-                'username'  => 'sanderverkuijlen'
-            )
-        ));
+        if($user_id > 0){
+            if($id != null){
+
+                $password = Password::find($id);
+
+                if($password->user_id == $user_id){
+
+                    return Response::json(array(
+                        'id'        => $password->id,
+                        'service'   => $password->service,
+                        'username'  => $password->username,
+                        'password'  => $password->password,
+                        'notes'     => $password->notes,
+                        'favourite' => ($password->favourite ? true : false)
+                    ));
+                }
+            }
+            else{
+
+                $passwords = Password::where('user_id', '=', $user_id)->get();
+
+                $result = array();
+                /* @var $password Password */
+                foreach($passwords as $password){
+                    $result[] = array(
+                            'id'        => $password->id,
+                            'service'   => $password->service,
+                            'username'  => $password->username,
+                            'password'  => $password->password,
+                            'notes'     => $password->notes,
+                            'favourite' => ($password->favourite ? true : false)
+                        );
+                }
+
+                return Response::json($result);
+            }
+        }
+
+        return Response::make('', 401);
     }
     //Save
-    public function post_password(){
-        return Response::json(array());
+    public function post_password($id){
+
+        $password   = Password::find($id);
+        $post       = json_decode(file_get_contents('php://input'));
+
+        if($password != null && $post instanceof StdClass){
+
+            foreach($post as $key => $val){
+
+                switch($key){
+
+                    //Don't update these:
+                    case 'id':
+                    case 'user_id':
+                        break;
+
+                    //For everything else, there's default
+                    default:
+                        $password->$key = $val;
+                        break;
+                }
+            }
+
+            $password->save();
+
+            return Response::make('', 200);
+        }
+
+        return Response::make('', 403);
     }
     //Delete
     public function delete_password(){

@@ -1,8 +1,8 @@
-<section id="list" class="wrapper">
+<section ng-controller="PasswordCtrl" id="list" class="wrapper">
     <header>
         <span class="left">
-            <a href="javascript:" onclick="goto('edit', true)" class="icon-plus compact_only"></a>
-            <a href="javascript:" onclick="" class="icon-plus no_compact"></a>
+            <a href="javascript:" ng-click="new(true)" class="icon-plus compact_only"></a>
+            <a href="javascript:" ng-click="new(false)" class="icon-plus no_compact"></a>
         </span>
         <span class="right">
             <a href="javascript:" onclick="options();" class="icon-th-large"></a>

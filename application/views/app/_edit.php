@@ -1,4 +1,4 @@
-<section id="edit" class="wrapper">
+<section ng-controller="PasswordCtrl" id="edit" class="wrapper">
     <header>
         <span class="left">
             <a href="javascript:" onclick="goto('list', false);" class="icon-arrow-left"></a>

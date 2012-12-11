@@ -70,9 +70,9 @@ return array(
 		'mysql' => array(
             'driver'   => 'mysql',
             'host'     => 'localhost',
-            'database' => 'password_db',
-            'username' => 'password_code',
-            'password' => '8tu4heJa',
+            'database' => 'custodes',
+            'username' => 'custodes_code',
+            'password' => 'S6vKrWcMeThMnScJ',
             'charset'  => 'utf8',
             'prefix'   => '',
 		),

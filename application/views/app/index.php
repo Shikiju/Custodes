@@ -10,7 +10,7 @@ Asset::container('footer')->add('jquery',           'js/lib/jquery.min.js');
 Asset::container('footer')->add('angular',          'js/lib/angular.min.js');
 Asset::container('footer')->add('angular-resource', 'js/lib/angular-resource.min.js');
 Asset::container('footer')->add('paging',           'js/paging.js');
-Asset::container('footer')->add('modules',          'js/app/modules.js');
+//Asset::container('footer')->add('modules',          'js/app/modules.js');
 Asset::container('footer')->add('app',              'js/app/app.js');
 ?>
 <!doctype html>
