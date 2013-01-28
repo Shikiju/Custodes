@@ -24,13 +24,12 @@ Asset::container('footer')->add('app',              'js/app/app.js');
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <?/*<link rel="apple-touch-startup-image" href="img/start-screen-320x460.png">*/?>
+    <link rel="apple-touch-startup-image" href="img/splash.png">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,600,800,700' rel='stylesheet' type='text/css'>
 
     <?=Asset::container('header')->styles()?>
     <?=Asset::container('header')->scripts()?>
-    <?//wtf? ?>
 
 </head>
 <body>
