@@ -18,19 +18,24 @@ Asset::container('footer')->add('app',              'js/app/app.js');
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Password</title>
+
+    <title>Custodes</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <?/*<link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">*/?>
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="img/touch-icon2-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch-icon2-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="img/touch-icon2-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch-icon2-144.png" />
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-startup-image" href="img/splash.png">
+    <link rel="apple-touch-startup-image" href="img/splash2.png">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,600,800,700' rel='stylesheet' type='text/css'>
 
     <?=Asset::container('header')->styles()?>
     <?=Asset::container('header')->scripts()?>
-
 </head>
 <body>
     <div id="pages">

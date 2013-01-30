@@ -1,11 +1,12 @@
 
 //Text
-@text:              #797979;
-@licht:             #FFFFFF;
-@blue:              #8BD0F2;
-@darkblue:          #8FA8B9;
-@red:               #F5A99A;
-@green:             #B7DCAF;
+@text:              #333333;
+@text_light:        #FFFFFF;
+//@blue:              #8BD0F2;
+//@darkblue:          #8FA8B9;
+@red:               #b63333;
+@red_light:         #D23535;
+//@green:             #B7DCAF;
 @yellow:            #F5F29A;
 
 //Backgrounds
@@ -50,11 +51,11 @@ body{
 	color:              @text;
 
 	a{
-		.responsive(color, @text, @blue);
+		.responsive(color, @red, @red_light);
 
 		&.button{
-			.responsive(background-color, @blue, @darkblue);
-			color:              @licht;
+			.responsive(background-color, @red, @red_light);
+			color:              @text_light;
 			text-decoration:    none;
 			padding:            6px 10px;
 			border-radius:      2px;
@@ -68,14 +69,21 @@ body{
 	margin:             0 auto;
 	overflow:           hidden;
 
-	> section{
+    -webkit-transform:  translate3d(0,0,0);
+    -moz-transform:     translate3d(0,0,0);
+    -ms-transform:      translate3d(0,0,0);
+    -o-transform:       translate3d(0,0,0);
+    transform:          translate3d(0,0,0);
+
+
+  > section{
 		position:           absolute;
 		height:             100%;
 		z-index:            100;
 		overflow:           hidden;
 		width:              1366px;
 		margin:             -99999px auto 0;
-		padding:            40px 0;
+		padding:            37px 0 0 0;
 
 		background:         @page_bg;
 
@@ -88,11 +96,12 @@ body{
 			position:           absolute;
 			top:                0;
 			width:              100%;
-			height:             40px;
-			line-height:        36px;
+			height:             37px;
+			line-height:        37px;
 			font-size:          26px;
-			background:         @content_bg;
-			border-bottom:      1px solid @border;
+			background:         @red;
+            color:              @text_light;
+			//border-bottom:      1px solid @border;
 			text-align:         center;
 
 			span{
@@ -107,13 +116,13 @@ body{
 					display:            block;
 					width:              50px;
 					text-decoration:    none;
+                    color:              @text_light;
 				}
 			}
 
 			h1{
 				font-size:          20px;
 				margin:             0;
-				font-style:         italic;
 				font-weight:        300;
 			}
 		}
@@ -209,7 +218,8 @@ body{
 		}
 
 		footer{
-			position:           absolute;
+            display:            none;
+			/*position:           absolute;
 			bottom:             0;
 			width:              100%;
 			height:             40px;
@@ -219,7 +229,7 @@ body{
 			border-top:         1px solid @border;
 			text-align:         center;
 			font-style:         italic;
-			font-weight:        300;
+			font-weight:        300;*/
 		}
 
 		&.page_in_forward{
