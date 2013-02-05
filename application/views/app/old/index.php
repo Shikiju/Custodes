@@ -23,14 +23,14 @@ Asset::container('footer')->add('app',              'js/app/app.js');
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="img/touch-icon2-114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch-icon2-114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="img/touch-icon2-144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch-icon2-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="../../../../public/img/touch-icon-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../../public/img/touch-icon-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="../../../../public/img/touch-icon-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../public/img/touch-icon-144.png" />
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-startup-image" href="img/splash2.png">
+    <link rel="apple-touch-startup-image" href="../../../../public/img/splash.png">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,600,800,700' rel='stylesheet' type='text/css'>
 
@@ -52,12 +52,6 @@ Asset::container('footer')->add('app',              'js/app/app.js');
         echo render('app._info');
         ?>
     </div>
-
-    <ul id="options">
-        <li><a href="javascript:" onclick="goto('profile', true);">Profile</a></li>
-        <?/*<li><a href="javascript:" onclick="">Settings</a></li>*/?>
-        <li><a href="javascript:" onclick="goto('login', false);">Logout</a></li>
-    </ul>
 
     <?=Asset::container('footer')->scripts()?>
 

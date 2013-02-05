@@ -1,10 +1,6 @@
 <section id="info" class="wrapper">
     <header>
-                <span class="left">
-                    <a href="javascript:" onclick="goto(null, false);" class="icon-arrow-left"></a>
-                </span>
-                <span class="right">
-                </span>
+        <a href="javascript:" onclick="goto(null, false);" class="left icon-arrow-left"></a>
         <h1>Custodes</h1>
     </header>
     <article>

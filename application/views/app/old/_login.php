@@ -1,11 +1,7 @@
 <section ng-controller="LoginCtrl" id="login" class="wrapper <?=($start ? 'start' : '')?>">
     <header>
-        <span class="left">
-        </span>
-        <span class="right">
-            <a href="javascript:" class="icon-info-sign" onclick="goto('info', true);"></a>
-        </span>
         <h1>Custodes</h1>
+        <a href="javascript:" class="right icon-info-sign" onclick="goto('info', true);"></a>
     </header>
     <article>
         <div>
