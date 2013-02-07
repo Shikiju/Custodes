@@ -39,19 +39,7 @@ Asset::container('footer')->add('app',              'js/app/app.js');
 </head>
 <body>
 
-<header>
-    <a href="javascript:" class="left icon-signout"     data-page="favourites"  onclick="goto('login', false);">    </a>
-    <a href="javascript:" class="left icon-signout"     data-page="list"        onclick="goto('login', false);">    </a>
-    <a href="javascript:" class="left icon-signout"     data-page="preferences" onclick="goto('login', false);">    </a>
-    <a href="javascript:" class="left icon-arrow-left"  data-page="edit"        onclick="goto(null, false);">       </a>
-
-    <h1>Login</h1>
-
-    <a href="javascript:" class="right icon-plus"       data-page="list"        onclick="goto('edit', true);">      </a>
-    <a href="javascript:" class="right icon-plus"       data-page="favourites"  onclick="goto('edit', true);">      </a>
-</header>
-
-<section id="pages">
+<div id="pages">
     <?
     echo render('app.login', array('start' => true));
     echo render('app.favourites');
@@ -59,14 +47,16 @@ Asset::container('footer')->add('app',              'js/app/app.js');
     echo render('app.edit');
     echo render('app.preferences');
     ?>
-</section>
+</div>
 
-<nav>
-    <a href="javascript:" data-login="false" onclick="goto('login', false);">       <i class="icon-signin"></i>     </a>
-    <a href="javascript:" data-login="true" onclick="goto('favourites', true);">    <i class="icon-star"></i>       </a>
-    <a href="javascript:" data-login="true" onclick="goto('list', true);">          <i class="icon-list"></i>       </a>
-    <a href="javascript:" data-login="true" onclick="goto('preferences', true);">   <i class="icon-user"></i>       </a>
-</nav>
+<footer>
+    <nav>
+        <a href="javascript:" data-login="false" onclick="goto('login', false);">       <i class="icon-signin"></i>     </a>
+        <a href="javascript:" data-login="true" onclick="goto('favourites', true);">    <i class="icon-star"></i>       </a>
+        <a href="javascript:" data-login="true" onclick="goto('list', true);">          <i class="icon-list"></i>       </a>
+        <a href="javascript:" data-login="true" onclick="goto('preferences', true);">   <i class="icon-user"></i>       </a>
+    </nav>
+</footer>
 
 <?=Asset::container('footer')->scripts()?>
 

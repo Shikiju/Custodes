@@ -1,7 +1,16 @@
+<section id="edit" ng-controller="PasswordCtrl">
 
-<article ng-controller="PasswordCtrl" id="edit" class="wrapper">
+    <header>
+        <a href="javascript:" class="left icon-arrow-left" onclick="goto(null, false);"></a>
 
-    <?=render('app._part_list', array('page' => 'edit'))?>
-    <?=render('app._part_edit', array('page' => 'edit'))?>
+        <h1>TODO: current credential label</h1>
+    </header>
 
-</article>
+    <article>
+
+        <?=render('app._part_list', array('page' => 'edit'))?>
+        <?=render('app._part_edit', array('page' => 'edit'))?>
+
+    </article>
+
+</section>

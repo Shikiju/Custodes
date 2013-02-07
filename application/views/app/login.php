@@ -1,8 +1,16 @@
 
-<article ng-controller="LoginCtrl" id="login" class="wrapper <?=($start ? 'start' : '')?>">
-    <div>
+<section id="login" ng-controller="LoginCtrl" class="current_page">
 
-        <a ng-click="login()">DEBUG LOGIN</a>
+    <header>
+        <h1>Login</h1>
+    </header>
 
-    </div>
-</article>
+    <article >
+        <div>
+
+            <a ng-click="login()">DEBUG LOGIN</a>
+
+        </div>
+    </article>
+
+</section>
