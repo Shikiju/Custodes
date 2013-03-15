@@ -41,11 +41,11 @@ Asset::container('footer')->add('app',              'js/app/app.js');
 
 <div id="pages">
     <?
-    echo render('app.login', array('start' => true));
-    echo render('app.favourites');
-    echo render('app.list');
-    echo render('app.edit');
-    echo render('app.preferences');
+    echo render('app.pages/login', array('start' => true));
+    echo render('app.pages/favourites');
+    echo render('app.pages/list');
+    echo render('app.pages/edit');
+    echo render('app.pages/preferences');
     ?>
 </div>
 

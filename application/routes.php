@@ -34,12 +34,12 @@
 
 Route::get('/', function()
 {
-    return View::make('app._index');
+    return View::make('app.index');
 });
-//Route::get('/test', function()
-//{
-//    return View::make('app.test');
-//});
+Route::get('/new', function()
+{
+    return View::make('app.new');
+});
 Route::get('/laravel', function()
 {
     return View::make('home.laravel');
