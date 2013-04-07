@@ -36,14 +36,14 @@ Route::get('/', function()
 {
     return View::make('app.index');
 });
-Route::get('/new', function()
-{
-    return View::make('app.new');
-});
-Route::get('/laravel', function()
-{
-    return View::make('home.laravel');
-});
+//Route::get('/new', function()
+//{
+//    return View::make('app.new');
+//});
+//Route::get('/laravel', function()
+//{
+//    return View::make('home.laravel');
+//});
 
 Route::controller('api');
 

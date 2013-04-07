@@ -1,20 +1,19 @@
-@body_bg:			#202327;
-@body_text:			white;
-@body_focus:		#27282d;
+@body_bg:			#f7f6f3;
+@body_text:			#444;
 
 @nav_bg:			#065f94;
 @nav_text:			white;
-@nav_bg_focus:		#055584;
+@nav_bg_focus:		lighten(@nav_bg, 5%);
 
 @header_bg:			@nav_bg;
 @header_text:		@nav_text;
 
-@subheader_bg:		#2e2f35;
+@subheader_bg:		#444;
 @subheader_text:	white;
 
 
-@import 'lib.less';
-@import 'icons.less';
+@import '../lib';
+@import '../icons';
 
 *{
 	-webkit-box-sizing: border-box;
@@ -75,6 +74,7 @@ body{
 		display:			none;
 		height:             100%;
 		width:				100%;
+		padding-bottom:		66px;
 		overflow:           hidden;
 
 		&.current_page{
@@ -85,6 +85,7 @@ body{
 			width:              100%;
 			height:             37px;
 			line-height:        34px;
+			font-size:          26px;
 			background:         @nav_bg;
 			color:              @nav_text;
 			text-align:         center;
@@ -96,8 +97,6 @@ body{
 				display:            block;
 				width:              50px;
 				text-decoration:	none;
-				font-size:          18px;
-				border:				0 solid @nav_bg_focus;
 
 				&.sel,&:hover,&:active,&:focus{
 					background-color: 	@nav_bg_focus;
@@ -105,20 +104,19 @@ body{
 
 				&.left{
 					float:              left;
-					border-right-width: 1px;
 				}
 
 				&.right{
 					float:              right;
-					border-left-width: 	1px;
 				}
 			}
 
 			h1{
 				position:			absolute;
 				width:				100%;
-				font-size:          15px;
+				font-size:          17px;
 				margin:             0;
+				text-transform:		uppercase;
 			}
 		}
 
@@ -127,7 +125,7 @@ body{
 			height:             100%;
 			width:              100%;
 			overflow:           hidden;
-			padding:        	37px 0 0;
+			padding:        	37px 0 66px;
 
 			ul{
 				height:             100%;
@@ -142,58 +140,38 @@ body{
 				li{
 					position:           relative;
 					width:              100%;
+					height:             76px;
+					padding:            0 90px 0 60px;
 
-					&.credential{
-						height:             64px;
-						padding:            0 40px 0 40px;
-						border-bottom:		2px solid @body_focus;
-						cursor:				pointer;
-
-						hgroup{
-							float:              left;
-							display:            block;
-							width:              100%;
-							padding-top:        9px;
-
-							h3{
-								font-weight:        300;
-								font-size:          19px;
-								font-style:         italic;
-								margin:             0;
-								overflow:           hidden;
-								text-overflow:      ellipsis;
-							}
-							h4{
-								line-height:        40px;
-								font-weight:        400;
-								font-size:          11px;
-								margin:             0;
-								line-height:        16px;
-								overflow:           hidden;
-								text-overflow:      ellipsis;
-							}
-						}
-						i{
-							position:           absolute;
-							top:                0;
-							right:              0;
-							margin:             20px 20px 0 0;
-							font-size:			17px;
-						}
-						&.sel,&:hover,&:active,&:focus{
-							background-color: 	@body_focus;
-						}
-					}
-
-					&.group{
-						background-color:	@subheader_bg;
-						padding: 			10px 20px;
+					hgroup{
+						float:              left;
+						display:            block;
+						width:              100%;
+						padding-top:        14px;
 
 						h2{
-							margin: 			0;
-							font-weight: 		normal;
-							font-size: 			16px;
+							font-weight:        300;
+							font-size:          20px;
+							font-style:         italic;
+							margin:             0;
+							overflow:           hidden;
+							text-overflow:      ellipsis;
 						}
+						h3{
+							line-height:        40px;
+							font-weight:        400;
+							font-size:          13px;
+							margin:             0;
+							line-height:        16px;
+							overflow:           hidden;
+							text-overflow:      ellipsis;
+						}
+					}
+					.button{
+						position:           absolute;
+						top:                0;
+						right:              0;
+						margin:             22px 20px 22px 0;
 					}
 				}
 			}
@@ -227,6 +205,34 @@ body{
 			&.page_out_backward{
 				margin-top:         0;
 				.animate(page_out_backward, linear, 0.5s, 0s, forwards);
+			}
+		}
+	}
+}
+
+footer{
+	position:           absolute;
+	bottom:             0;
+	width:              100%;
+	height:             66px;
+	line-height:        66px;
+	font-size:          26px;
+	text-align:         center;
+
+	nav{
+		background:         @nav_bg;
+		color:              @nav_text;
+
+		a{
+			position:           relative;
+			z-index:			1;
+			display:            inline-block;
+			width:              100px;
+			color:				@nav_text;
+			text-decoration:	none;
+
+			&.sel,&:hover,&:active,&:focus{
+				background-color: 	@nav_bg_focus;
 			}
 		}
 	}

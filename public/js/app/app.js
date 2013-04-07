@@ -1,3 +1,1 @@
-
-
-var app = angular.module( 'App', ['ApiResource'] );
+var app = angular.module( 'App', [] );

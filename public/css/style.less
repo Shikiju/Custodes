@@ -1,19 +1,22 @@
-@body_bg:			#f7f6f3;
-@body_text:			#444;
+@prim_bg:			#047b5f;
+@prim_text:			#ffffff;
+@prim_border:		@prim_bg;
 
-@nav_bg:			#065f94;
-@nav_text:			white;
-@nav_bg_focus:		lighten(@nav_bg, 5%);
+@sec_bg:			#f6f6f6;
+@sec_text:			#5a5a5a;
+@sec_border:		#e4e4e4;
 
-@header_bg:			@nav_bg;
-@header_text:		@nav_text;
+@ter_bg:			#ffffff;
+@ter_text:			#a5a5a5;
+@ter_border: 		@sec_border;
 
-@subheader_bg:		#444;
-@subheader_text:	white;
+@error:				#ec4653;
+@warning: 			#fde47b;
+@message:			@prim_bg;
 
 
-@import 'lib.less';
-@import 'icons.less';
+@import 'lib';
+@import 'icons';
 
 *{
 	-webkit-box-sizing: border-box;
@@ -42,22 +45,48 @@ body{
 	margin:             0;
 	background:         #333333;
 
+	//Errors, warnings and messages
+	.error, .warning, .message{
+		font-size:			78.57142857142857%; //14px -> 11px
+	}
+	.error{
+		color:				@error;
+	}
+	.warning{
+		color:				@warning;
+	}
+	.message{
+		color:				@message;
+	}
+
+	//Links and buttons
 	a{
 		color:				inherit;
 
 		&.button{
-			.responsive(background-color, @nav_bg, @nav_bg_focus);
-			color:              @nav_text;
+			background-color: 	@prim_bg;
+			color: 				@prim_text;
 			text-decoration:    none;
 			padding:            6px 10px;
 			border-radius:      2px;
+			line-height:		32px;
+
+			&:hover,&:active,&:focus{
+				background-color:	darken(@prim_bg, 3%);
+			}
 		}
+	}
+
+	//Form fields
+	input[type=text], input[type=password]{
+		color:				inherit;
+		margin:			0;
 	}
 }
 
 #pages{
-	background:         @body_bg;
-	color:              @body_text;
+	background: 		@sec_bg;
+	color: 				@sec_text;
 
 	height:             100%;
 	overflow:           hidden;
@@ -74,7 +103,6 @@ body{
 		display:			none;
 		height:             100%;
 		width:				100%;
-		padding-bottom:		66px;
 		overflow:           hidden;
 
 		&.current_page{
@@ -85,11 +113,13 @@ body{
 			width:              100%;
 			height:             37px;
 			line-height:        34px;
-			font-size:          26px;
-			background:         @nav_bg;
-			color:              @nav_text;
+			background: 		@prim_bg;
+			color: 				@prim_text;
 			text-align:         center;
 			margin-bottom:		-37px;
+			position: 			relative;
+			z-index:			1;
+			.box-shadow(0, 0, #adadad, 5px, 2px);
 
 			a{
 				position:           relative;
@@ -97,10 +127,7 @@ body{
 				display:            block;
 				width:              50px;
 				text-decoration:	none;
-
-				&.sel,&:hover,&:active,&:focus{
-					background-color: 	@nav_bg_focus;
-				}
+				font-size:          18px;
 
 				&.left{
 					float:              left;
@@ -109,14 +136,18 @@ body{
 				&.right{
 					float:              right;
 				}
+
+				&:hover,&:active,&:focus{
+					background-color: 	darken(@prim_bg, 3%);
+				}
 			}
 
 			h1{
 				position:			absolute;
+				font-weight:		300;
 				width:				100%;
-				font-size:          17px;
+				font-size:          15px;
 				margin:             0;
-				text-transform:		uppercase;
 			}
 		}
 
@@ -125,9 +156,9 @@ body{
 			height:             100%;
 			width:              100%;
 			overflow:           hidden;
-			padding:        	37px 0 66px;
+			padding:        	37px 0 0;
 
-			ul{
+			> ul{
 				height:             100%;
 				float:              left;
 				list-style:         none;
@@ -137,50 +168,88 @@ body{
 				overflow-y:         scroll;
 				-webkit-overflow-scrolling: touch;
 
-				li{
-					position:           relative;
-					width:              100%;
-					height:             76px;
-					padding:            0 90px 0 60px;
+				> li{
+					background-color: 	@ter_bg;
+					border:				1px solid @sec_border;
+					.border-radius(2px);
+					color: 				@sec_text;
+					margin:				10px;
+					padding:			10px 10px 0 10px;
 
-					hgroup{
-						float:              left;
-						display:            block;
-						width:              100%;
-						padding-top:        14px;
+					h2{
+						font-weight: 		300;
+						font-size: 			19px;
+						padding: 			3px 10px 13px 10px;
+						margin:             0;
+						overflow:           hidden;
+						text-overflow:      ellipsis;
+						border-bottom:		2px solid @prim_border;
+					}
 
-						h2{
+					a{
+						display:			block;
+						position:           relative;
+						padding:            12px 40px 14px 10px;
+						cursor:				pointer;
+						border-bottom:		1px solid @sec_border;
+						text-decoration: 	none;
+
+						&:last-child{
+							border-bottom: 		0;
+						}
+
+						b{
+							display:			block;
 							font-weight:        300;
-							font-size:          20px;
-							font-style:         italic;
+							font-size:          19px;
 							margin:             0;
 							overflow:           hidden;
 							text-overflow:      ellipsis;
 						}
-						h3{
+						small{
+							display:			block;
 							line-height:        40px;
 							font-weight:        400;
-							font-size:          13px;
+							font-size:          11px;
 							margin:             0;
 							line-height:        16px;
 							overflow:           hidden;
 							text-overflow:      ellipsis;
+							color: 				@ter_text;
 						}
-					}
-					.button{
-						position:           absolute;
-						top:                0;
-						right:              0;
-						margin:             22px 20px 22px 0;
+						i{
+							position:           absolute;
+							top:                0;
+							right:              0;
+							margin:             22px 20px 0 0;
+							font-size:			17px;
+							color: 				@ter_text;
+						}
+
+						&:hover,&:active,&:focus{
+							background-color:		@sec_bg;
+
+							i{
+								color: 				@sec_text;
+							}
+						}
 					}
 				}
 			}
-			div{
+			> div{
 				height:             100%;
 				width:              100%;
-				padding:            20px;
 				overflow-y:         auto;
 				-webkit-overflow-scrolling: touch;
+
+				> div{
+					margin:				10px;
+					padding:			10px;
+					background-color: 	@ter_bg;
+					border:				1px solid @sec_border;
+					.border-radius(2px);
+					color: 				@sec_text;
+				}
 			}
 
 			ul + div{
@@ -205,34 +274,6 @@ body{
 			&.page_out_backward{
 				margin-top:         0;
 				.animate(page_out_backward, linear, 0.5s, 0s, forwards);
-			}
-		}
-	}
-}
-
-footer{
-	position:           absolute;
-	bottom:             0;
-	width:              100%;
-	height:             66px;
-	line-height:        66px;
-	font-size:          26px;
-	text-align:         center;
-
-	nav{
-		background:         @nav_bg;
-		color:              @nav_text;
-
-		a{
-			position:           relative;
-			z-index:			1;
-			display:            inline-block;
-			width:              100px;
-			color:				@nav_text;
-			text-decoration:	none;
-
-			&.sel,&:hover,&:active,&:focus{
-				background-color: 	@nav_bg_focus;
 			}
 		}
 	}
