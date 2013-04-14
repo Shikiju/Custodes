@@ -25,7 +25,7 @@
     <script src="Scripts/lib/angular.min.js"></script>
     <script src="Scripts/lib/angular-resource.min.js"></script>
     <script src="Scripts/app/app.js"></script>
-    <script src="Scripts/app/services/api.js"></script>
+    <script src="Scripts/app/services/data.js"></script>
     <script src="Scripts/app/controllers/app.js"></script>
     <script src="Scripts/app/controllers/login.js"></script>
     <script src="Scripts/app/controllers/list.js"></script>
@@ -43,9 +43,6 @@
                         <div class="error" ng-hide="errors.generic.length == 0">{{errors.generic.join(', ');}}</div>
                         <label>E-mail</label><br>
                         <input type="text" name="email" ng-model="email"> <span class="error" ng-hide="errors.email.length == 0">{{errors.email.join(', ');}}</span><br>
-                        <br>
-                        <label>Username</label><br>
-                        <input type="text" name="username" ng-model="username"> <span class="error" ng-hide="errors.username.length == 0">{{errors.username.join(', ');}}</span><br>
                         <br>
                         <label>Password</label><br>
                         <input type="text" name="password" ng-model="password"> <span class="error" ng-hide="errors.password.length == 0">{{errors.password.join(', ');}}</span><br>
@@ -69,57 +66,39 @@
                 <ul>
                     <li ng-repeat="project in projects | orderBy:'GroupName'">
                         <h2>{{project.GroupName}}</h2>
-                        <a href="javascript:">
+                        <a href="javascript:" ng-click="getProject(project);">
                             <b>{{project.Name}}</b>
                             <small>{{project.Login}}</small>
                             <i class="icon-chevron-right"></i>
                         </a>
                     </li>
-<%--                    <li>
-                        <h2>Mail</h2>
-
-                        <a href="javascript:">
-                            <b>Gmail</b>
-                            <small>sanderverkuijlen@gmail.com</small>
-                            <i class="icon-chevron-right"></i>
-                        </a>
-                        <a href="javascript:">
-                            <b>Gmail</b>
-                            <small>sanderverkuijlen86@gmail.com</small>
-                            <i class="icon-chevron-right"></i>
-                        </a>
-                        <a href="javascript:">
-                            <b>Outlook</b>
-                            <small>sanderverkuijlen@outlook.com</small>
-                            <i class="icon-chevron-right"></i>
-                        </a>
-                    </li>--%>
-
                 </ul>
                 <div>
                     <div>
                         <label>Name</label><br>
-                        <input type="text" name="name" value="Gmail"><br>
+                        <input type="text" name="name" value="Gmail" ng-model="project.Name"><br>
 
                         <br>
 
                         <label>Login</label><br>
-                        <input type="text" name="login" value="sanderverkuijlen@outlook.com"><br>
+                        <input type="text" name="login" value="sanderverkuijlen@outlook.com" ng-model="project.Login"><br>
 
                         <br>
 
                         <label>Password</label><br>
-                        <input type="text" name="password" value="hatseflats"><br>
+                        <input type="text" name="password" value="hatseflats" ng-model="project.Password"><br>
 
                         <br>
 
                         <label>Group</label><br>
-                        <input type="text" name="group" value="Mail"><br>
+                        <input type="text" name="group" value="Mail" ng-model="project.GroupName"><br>
 
                         <br>
 
                         <label>Favourite</label><br>
                         <input type="checkbox" name="favourite" value="1" checked="checked"><br>
+
+                        <button ng-click="saveProject();">Save</button>
                     </div>
                 </div>
             </article>

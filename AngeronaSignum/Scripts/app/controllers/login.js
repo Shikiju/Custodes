@@ -1,8 +1,7 @@
-app.controller('LoginCtrl', function LoginCtrl($scope){
+app.controller('LoginCtrl', function LoginCtrl($scope, Authentication){
 
-    $scope.email    = '';
-    $scope.username = '';
-    $scope.password = '';
+    $scope.email    = 'sander@gmail.com';
+    $scope.password = 'sander';
 
     $scope.errors   = {
     };
@@ -16,7 +15,6 @@ app.controller('LoginCtrl', function LoginCtrl($scope){
         $scope.errors = {
             generic:    [],
             email:      [],
-            username:   [],
             password:   []
         };
 
@@ -27,12 +25,6 @@ app.controller('LoginCtrl', function LoginCtrl($scope){
         }
         //TODO: validate e-mailadress
 
-        //Check username
-        if($scope.username == ''){
-            $scope.errors.username.push('Please fill in your username');
-            succes = false;
-        }
-
         //Check password
         if($scope.password == ''){
             $scope.errors.password.push('Please fill in your password');
@@ -40,15 +32,28 @@ app.controller('LoginCtrl', function LoginCtrl($scope){
         }
 
         if(succes){
-            //So far, so good: try logging in now
-           //TODO: Do API stuff here
-            if($scope.username == 'test'){
-                $scope.errors.generic.push('Placeholder for API errors');
-                succes = false;
-            }
+          //So far, so good: try logging in now
+
+          //TMP: dit moet in de AppCtrl of Authentification service
+          Authentication.Login($scope.email, $scope.password, function() {
+
+            console.log('login succes');
+            $scope.appLogin();
+
+          }, function() {
+            console.log('login error');
+            succes = false;
+          });
+
+          //TODO: Do API stuff here
+          if ($scope.email == 'test') {
+            $scope.errors.generic.push('Placeholder for API errors');
+            succes = false;
+          }
+          //END TMP
         }
 
-        if(succes){
+        if (succes) {
             //Yeah! go to the list
             $scope.goToPage('list');
         }

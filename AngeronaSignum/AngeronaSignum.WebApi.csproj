@@ -161,7 +161,7 @@
     <Content Include="Scripts\app\controllers\app.js" />
     <Content Include="Scripts\app\controllers\list.js" />
     <Content Include="Scripts\app\controllers\login.js" />
-    <Content Include="Scripts\app\services\api.js" />
+    <Content Include="Scripts\app\services\data.js" />
     <Content Include="Scripts\cryptjsaes.js" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -171,7 +171,7 @@
     <Content Include="Content\css\style.less" />
     <Content Include="Content\img\.gitignore" />
     <None Include="Properties\PublishProfiles\AngeronaMain.pubxml" />
-    <Content Include="default.aspx" />
+    <Content Include="index.html" />
     <Content Include="Scripts\lib\angular-resource.min.js" />
     <Content Include="Scripts\lib\angular.min.js" />
     <Content Include="Scripts\lib\html5shiv.min.js" />

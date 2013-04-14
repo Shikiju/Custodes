@@ -51,15 +51,14 @@
         {
             using (var connection = this.databaseService.GetOpenConnection())
             {
-                credential = connection.Query<Credential>(
-                    @"UPDATE credential 
+                connection.Execute(@"UPDATE credentials
                     SET    Name = @Name, 
                            Login = @Login, 
                            Password = @Password, 
                            GroupName = @GroupName, 
                            IsFavorite = @IsFavorite 
-                    WHERE  Id = @id 
-                           AND userid = @userid", new { credential, userid = this.User }).FirstOrDefault();
+                    WHERE  Id = @Id 
+                           AND userid = 1", credential);
             }
 
             return credential;
@@ -72,7 +71,7 @@
 
             using (var connection = this.databaseService.GetOpenConnection())
             {
-                connection.Execute("INSERT INTO credential (Name, Login, Password, GroupName, IsFavorite) VALUES (@Name, @Login,@Password, @GroupName, @IsFavorite)", credential);
+                connection.Execute("INSERT INTO credentials (Name, Login, Password, GroupName, IsFavorite, UserId) VALUES (@Name, @Login,@Password, @GroupName, @IsFavorite, 1)", credential);
             }
 
             return credential;

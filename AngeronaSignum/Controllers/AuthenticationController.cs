@@ -20,5 +20,11 @@
         {
             return this.User != null;
         }
+
+        [HttpOptions]
+        public void Options()
+        {
+            return;
+        }
     }
 }

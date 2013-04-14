@@ -1,1 +1,1 @@
-var app = angular.module('App', ['backendConnection']);
+var app = angular.module('App', ['dataService']);

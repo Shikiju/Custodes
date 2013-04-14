@@ -28,23 +28,14 @@
             {
                 return;
             }
-            // temp request dont get filtered for now....
-
-            using (var connection = this.databaseService.GetOpenConnection())
-            {
-                var user2 = connection.Query<User>("select * from users").FirstOrDefault();
-                ((BaseController)filterContext.ControllerContext.Controller).User = user2;
-            }
             
-            base.OnActionExecuting(filterContext);
-            return;
             var headers = filterContext.Request.Headers;
 
             IEnumerable<string> hashedEmail;
             IEnumerable<string> hashedPassword;
 
-            headers.TryGetValues("AngeronaSignum-Email", out hashedEmail);
-            headers.TryGetValues("AngeronaSignum-Password", out hashedPassword);
+            headers.TryGetValues("Custodes-Email", out hashedEmail);
+            headers.TryGetValues("Custodes-Password", out hashedPassword);
 
             User user;
             using (var connection = this.databaseService.GetOpenConnection())
