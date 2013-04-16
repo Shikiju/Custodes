@@ -1,28 +1,28 @@
 angular.module('dataService', ['ngResource']).
-    factory('Project', function($resource) {
+    factory('Credential', function($resource) {
 
       var self = this;
 
-      var Project = $resource('http://localhost:49708\:49708/api/credential/:id',
+      var Credential = $resource('http://localhost:49708\:49708/api/credential/:id',
           { apiKey: '4f847ad3e4b08a2eed5f3b54' }, {
             create: { method: 'POST' },
             update: { method: 'PUT' }
           }
       );
 
-      Project.prototype.create = function(cb) {
-        return Project.create({}, this, cb);
+      Credential.prototype.create = function(cb) {
+        return Credential.create({}, this, cb);
       };
 
-      Project.prototype.update = function(cb) {
-        return Project.update({ id: this.Id }, this, cb);
+      Credential.prototype.update = function(cb) {
+        return Credential.update({ id: this.Id }, this, cb);
       };
 
-      Project.prototype.destroy = function (cb) {
-        //return Project.remove({ id: this._id.$oid }, cb);
+      Credential.prototype.destroy = function (cb) {
+        return Credential.remove({ id: this.Id }, this, cb);
       };
 
-      return Project;
+      return Credential;
     }).
     factory('Authentication', function($http) {
 

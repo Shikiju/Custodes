@@ -1,29 +1,29 @@
-app.controller('ListCtrl', function ListCtrl($scope, Project) {
+app.controller('ListCtrl', function ListCtrl($scope, Credential) {
 
   //Vars
-  $scope.projects = [];
-  $scope.project = new Project();
+  $scope.credentials = [];
+  $scope.credential = new Credential();
 
   //Functions
-  $scope.getProject = function(project) {
-    $scope.project = new Project(project);
+  $scope.getCredential = function(credential) {
+    $scope.credential = new Credential(credential);
   }
 
-  $scope.saveProject = function() {
+  $scope.saveCredential = function() {
 
     //Create
-    if ($scope.project.Id === undefined) {
+    if ($scope.credential.Id === undefined) {
 
-      $scope.project.create(function() {
-        $scope.projects = Project.query();
+      $scope.credential.create(function() {
+        $scope.credentials = Credential.query();
       });
 
     }
     //Update
     else {
 
-      $scope.project.update(function() {
-        $scope.projects = Project.query();
+      $scope.credential.update(function() {
+        $scope.credentials = Credential.query();
       });
 
     }
@@ -33,8 +33,8 @@ app.controller('ListCtrl', function ListCtrl($scope, Project) {
   $scope.$on('login', function(event, message) {
     console.log('test: login');
 
-    $scope.projects = Project.query(function(projects) {
-      $scope.project = new Project(projects[0]);
+    $scope.credentials = Credential.query(function(credentials) {
+      $scope.credential = new Credential(credentials[0]);
     });
   });
   
