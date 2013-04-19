@@ -57,8 +57,12 @@
             <header>
                 <a href="javascript:" class="left icon-chevron-left"></a>
 
-                <a href="javascript:" class="right icon-th-large" ng-click="goToPage('login')"></a>
+                <a href="javascript:" class="right icon-th-large" ng-click="appLogout()"></a>
             </header>
+
+            <div ng-show="isViewLoading" style="margin: 150px 0 0 100px;position:absolute">
+                <img src="Content/img/loading_green.gif" />
+            </div>
 
             <article>
                 <ul>
@@ -97,6 +101,8 @@
                         <input type="checkbox" name="favourite" ng-model="credential.IsFavorite"><br>
 
                         <button ng-click="saveCredential();">Save</button>
+                        <button ng-click="newCredential();">New</button>
+                        <button ng-click="deleteCredential();">Delete</button>
                     </div>
                 </div>
             </article>

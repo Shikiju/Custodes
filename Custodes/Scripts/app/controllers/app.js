@@ -1,21 +1,23 @@
-app.controller('AppCtrl', function AppCtrl($scope){
+app.controller('AppCtrl', function AppCtrl($scope) {
 
-    $scope.page = 'login';
+  $scope.isViewLoading = false;
 
-    $scope.goToPage = function(page, effect_in, effect_out){
+  $scope.page = 'login';
 
-        $scope.page = page;
+  $scope.goToPage = function (page, effect_in, effect_out) {
 
-        //TODO: effect_in, effect_out
-    }
+    $scope.page = page;
 
-    $scope.appLogin = function() {
-      $scope.$broadcast('login', {});
-    }
+    //TODO: effect_in, effect_out
+  }
 
-    $scope.appLogout = function() {
-      $scope.$broadcast('logout', {});
+  $scope.appLogin = function () {
+    $scope.isViewLoading = true;
+    $scope.$broadcast('login', {});
+  }
 
-      $scope.goToPage('login');
-    }
+  $scope.appLogout = function () {
+    $scope.$broadcast('logout', {});
+    $scope.goToPage('login');
+  }
 });

@@ -149,6 +149,7 @@
     <Compile Include="Services\IDatabaseService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\loading_green.gif" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Content\img\bg.png" />
