@@ -3,10 +3,12 @@ app.controller('LoginCtrl', function LoginCtrl($scope, Authentication) {
 
   $scope.login = function() {
 
-    var succes = false;
+    console.log($scope.loginForm.email);
+
+    var succes = true;
 
     //TMP: dit moet in de AppCtrl of Authentification service
-    Authentication.Login($scope.loginForm.email, $scope.loginForm.password, function() {
+    Authentication.Login($scope.loginForm.email.$modelValue, $scope.loginForm.password.$modelValue, function() {
 
       console.log('login succes');
       $scope.appLogin();
