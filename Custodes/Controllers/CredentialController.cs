@@ -11,6 +11,7 @@
     using Custodes.WebApi.Models;
     using Custodes.Filters;
     using Custodes.Controllers;
+    using Custodes.Utils;
 
     [AuthenticationFilter]
     public class CredentialController : BaseController
@@ -40,7 +41,7 @@
             var credential = new Credential();
             using (var connection = this.databaseService.GetOpenConnection())
             {
-                credential = connection.Query<Credential>("SELECT * FROM credential WHERE id = @id AND userid = @userid", new { id = id, userid = this.User }).FirstOrDefault();
+                credential = connection.Query<Credential>("SELECT * FROM credentials WHERE id = @id AND userid = @userid", new { id = id, userid = this.User }).FirstOrDefault();
             }
 
             return credential;
@@ -58,7 +59,7 @@
                            GroupName = @GroupName, 
                            IsFavorite = @IsFavorite 
                     WHERE  Id = @Id 
-                           AND userid = 1", credential);
+                           AND userid = @UserId", credential);
             }
 
             return credential;
@@ -68,10 +69,11 @@
         public Credential Post(Credential credential)
         {
             var user = this.User;
+            credential.UserId = this.User.Id;
 
             using (var connection = this.databaseService.GetOpenConnection())
             {
-                connection.Execute("INSERT INTO credentials (Name, Login, Password, GroupName, IsFavorite, UserId) VALUES (@Name, @Login,@Password, @GroupName, @IsFavorite, 1)", credential);
+                connection.Execute("INSERT INTO credentials (Name, Login, Password, GroupName, IsFavorite, UserId) VALUES (@Name, @Login,@Password, @GroupName, @IsFavorite, @UserId)", credential);
             }
 
             return credential;
@@ -82,7 +84,7 @@
         {
             using (var connection = this.databaseService.GetOpenConnection())
             {
-                connection.Execute("DELETE FROM credential WHERE id = @id ", credential);
+                connection.Execute("DELETE FROM credentials WHERE id = @id ", credential);
             }
         }
 

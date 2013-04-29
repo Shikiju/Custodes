@@ -24,6 +24,8 @@
     <script src="Scripts/lib/respond.min.js"></script>
     <script src="Scripts/lib/angular.min.js"></script>
     <script src="Scripts/lib/angular-resource.min.js"></script>
+    <script src="Scripts/lib/cryptojsSHA3-3.1.2.js"> </script>
+    <script src="Scripts/lib/cryptojsAES-3.1.2.js"> </script>
     <script src="Scripts/app/app.js"></script>
     <script src="Scripts/app/services/data.js"></script>
     <script src="Scripts/app/controllers/app.js"></script>
@@ -45,7 +47,7 @@
                             <div class="error" ng-hide="errors.generic.length == 0">{{errors.generic.join(', ');}}</div>
 
                             <label>E-mail</label><br>
-                            <input type="email" name="email" ng-model="email" required><br>
+                            <input type="email" name="email" placeholder="example@example.com" ng-model="email" required><br>
                             <div class="error" ng-show="loginForm.email.$error.required && loginForm.email.$dirty">Required</div>
                             <div class="error" ng-show="loginForm.email.$error.email && loginForm.email.$dirty">Must be a valid e-mailadress</div>
                             <br>

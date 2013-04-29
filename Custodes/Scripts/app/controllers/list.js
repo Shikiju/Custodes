@@ -36,8 +36,6 @@ app.controller('ListCtrl', function ListCtrl($scope, Credential) {
 
   //Events
   $scope.$on('login', function(event, message) {
-    console.log('login called');
-
     $scope.credentials = Credential.query(function(credentials) {
       $scope.credential = new Credential(credentials[0]);
       $scope.isViewLoading = false;
@@ -45,7 +43,6 @@ app.controller('ListCtrl', function ListCtrl($scope, Credential) {
   });
   
   $scope.$on('logout', function(event, message) {
-    console.log('logout called');
     $scope.credentials = [];
     $scope.credential = new Credential();
     $scope.goToPage('login');

@@ -66,6 +66,6 @@ D:\Projects\GitHub\Custodes\Custodes\bin\System.Web.Razor.xml
 D:\Projects\GitHub\Custodes\Custodes\bin\System.Web.WebPages.xml
 D:\Projects\GitHub\Custodes\Custodes\bin\System.Web.WebPages.Deployment.xml
 D:\Projects\GitHub\Custodes\Custodes\bin\System.Web.WebPages.Razor.xml
-D:\Projects\GitHub\Custodes\Custodes\obj\Debug\Custodes.WebApi.csprojResolveAssemblyReference.cache
 D:\Projects\GitHub\Custodes\Custodes\obj\Debug\Custodes.dll
 D:\Projects\GitHub\Custodes\Custodes\obj\Debug\Custodes.pdb
+D:\Projects\GitHub\Custodes\Custodes\obj\Debug\Custodes.WebApi.csprojResolveAssemblyReference.cache

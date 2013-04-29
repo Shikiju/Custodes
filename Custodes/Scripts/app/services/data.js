@@ -25,25 +25,24 @@ angular.module('dataService', ['ngResource']).
       return Credential;
     }).
     factory('Authentication', function($http) {
-
       this.Login = function(email, password, succes, error) {
-
         //TODO: Hash
-        var hashedEmail     = email;
-        var hashedPassword  = password;
+        var hashedEmail = CryptoJS.SHA3(email, { outputLength: 256 });
+        var hashedPassword = CryptoJS.SHA3(password, { outputLength: 256 });
 
         $http.defaults.headers.common['Custodes-Email']     = hashedEmail;
         $http.defaults.headers.common['Custodes-Password']  = hashedPassword;
 
         $http({ method: 'GET', url: 'http://localhost:49708/api/authentication' }).
           success(function(data, status, headers, config) {
-
+            console.log('status: ', status);
+            console.log('headers: ', headers);
+            console.log('config: ', config);
             console.log(data);
             succes();
             //error();
           }).
           error(function(data, status, headers, config) {
-
             error();
           });
       };
