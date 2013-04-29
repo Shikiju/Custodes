@@ -43,8 +43,7 @@
             <article>
                 <div>
                     <div>
-                        <form name="loginForm" ng-submit="login()" novalidate>
-                            <div class="error" ng-hide="errors.generic.length == 0">{{errors.generic.join(', ');}}</div>
+                        <form name="loginForm" ng-submit="login(email, password)" novalidate>
 
                             <label>E-mail</label><br>
                             <input type="email" name="email" placeholder="example@example.com" ng-model="email" required><br>
@@ -58,6 +57,7 @@
                             <br>
                             
                             <button type="submit" ng-disabled="loginForm.$invalid">Login</button>
+                            fgtt
                         </form>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
             <header>
                 <a href="javascript:" class="left icon-chevron-left"></a>
 
-                <a href="javascript:" class="right icon-th-large" ng-click="appLogout()"></a>
+                <a href="javascript:" class="right icon-th-large" ng-click="logout()"></a>
             </header>
 
             <div ng-show="isViewLoading" style="margin: 150px 0 0 100px;position:absolute">
@@ -88,32 +88,40 @@
                 </ul>
                 <div>
                     <div>
-                        <label>Name</label><br>
-                        <input type="text" name="name" value="Gmail" ng-model="credential.Name"><br>
+                        <form name="editForm" ng-submit="saveCredential()" novalidate>
 
-                        <br>
+                            <label>Name</label><br>
+                            <input type="text" name="name" value="Gmail" ng-model="credential.Name" required><br>
+                            <div class="error" ng-show="editForm.name.$error.required && editForm.name.$dirty">Required</div>
 
-                        <label>Login</label><br>
-                        <input type="text" name="login" ng-model="credential.Login"><br>
+                            <br>
 
-                        <br>
+                            <label>Login</label><br>
+                            <input type="text" name="login" ng-model="credential.Login" required><br>
+                            <div class="error" ng-show="editForm.login.$error.required && editForm.login.$dirty">Required</div>
 
-                        <label>Password</label><br>
-                        <input type="text" name="password" ng-model="credential.Password"><br>
+                            <br>
 
-                        <br>
+                            <label>Password</label><br>
+                            <input type="text" name="password" ng-model="credential.Password" required><br>
+                            <div class="error" ng-show="editForm.password.$error.required && editForm.password.$dirty">Required</div>
 
-                        <label>Group</label><br>
-                        <input type="text" name="group" ng-model="credential.GroupName"><br>
+                            <br>
 
-                        <br>
+                            <label>Group</label><br>
+                            <input type="text" name="group" ng-model="credential.GroupName" required><br>
+                            <div class="error" ng-show="editForm.group.$error.required && editForm.group.$dirty">Required</div>
 
-                        <label>Favourite</label><br>
-                        <input type="checkbox" name="favourite" ng-model="credential.IsFavorite"><br>
+                            <br>
 
-                        <button ng-click="saveCredential();">Save</button>
-                        <button ng-click="newCredential();">New</button>
-                        <button ng-click="deleteCredential();">Delete</button>
+                            <label>Favourite</label><br>
+                            <input type="checkbox" name="favourite" ng-model="credential.IsFavorite"><br>
+
+                            <button type="submit">Save</button>
+                            <button ng-click="newCredential();">New</button>
+                            <button ng-click="deleteCredential();">Delete</button>
+
+                        </form>
                     </div>
                 </div>
             </article>
