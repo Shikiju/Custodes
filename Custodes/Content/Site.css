@@ -57,7 +57,7 @@ body input[type=password] {
   color: inherit;
   margin: 0;
 }
-#pages {
+#page {
   background: #f6f6f6;
   color: #5a5a5a;
   height: 100%;
@@ -68,17 +68,13 @@ body input[type=password] {
   -o-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
-#pages > section {
+#page > section {
   position: absolute;
-  display: none;
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
-#pages > section.current_page {
-  display: block;
-}
-#pages > section > header {
+#page > section > header {
   width: 100%;
   height: 37px;
   line-height: 34px;
@@ -89,7 +85,7 @@ body input[type=password] {
   position: relative;
   z-index: 1;
 }
-#pages > section > header a {
+#page > section > header a {
   position: relative;
   z-index: 1;
   display: block;
@@ -97,32 +93,32 @@ body input[type=password] {
   text-decoration: none;
   font-size: 18px;
 }
-#pages > section > header a.left {
+#page > section > header a.left {
   float: left;
 }
-#pages > section > header a.right {
+#page > section > header a.right {
   float: right;
 }
-#pages > section > header a:hover,
-#pages > section > header a:active,
-#pages > section > header a:focus {
+#page > section > header a:hover,
+#page > section > header a:active,
+#page > section > header a:focus {
   background-color: #046c54;
 }
-#pages > section > header h1 {
+#page > section > header h1 {
   position: absolute;
   font-weight: 300;
   width: 100%;
   font-size: 15px;
   margin: 0;
 }
-#pages > section > article {
+#page > section > article {
   position: absolute;
   height: 100%;
   width: 100%;
   overflow: hidden;
   padding: 37px 0 0;
 }
-#pages > section > article > ul {
+#page > section > article > ul {
   height: 100%;
   float: left;
   list-style: none;
@@ -132,14 +128,14 @@ body input[type=password] {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-#pages > section > article > ul > li {
+#page > section > article > ul > li {
   background-color: #ffffff;
   border: 1px solid #e4e4e4;
   color: #5a5a5a;
   margin: 10px;
   padding: 10px 10px 0 10px;
 }
-#pages > section > article > ul > li h2 {
+#page > section > article > ul > li h2 {
   font-weight: 300;
   font-size: 19px;
   padding: 3px 10px 13px 10px;
@@ -148,7 +144,7 @@ body input[type=password] {
   text-overflow: ellipsis;
   border-bottom: 2px solid #047b5f;
 }
-#pages > section > article > ul > li a {
+#page > section > article > ul > li a {
   display: block;
   position: relative;
   padding: 12px 40px 14px 10px;
@@ -156,10 +152,10 @@ body input[type=password] {
   border-bottom: 1px solid #e4e4e4;
   text-decoration: none;
 }
-#pages > section > article > ul > li a:last-child {
+#page > section > article > ul > li a:last-child {
   border-bottom: 0;
 }
-#pages > section > article > ul > li a b {
+#page > section > article > ul > li a b {
   display: block;
   font-weight: 300;
   font-size: 19px;
@@ -167,7 +163,7 @@ body input[type=password] {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-#pages > section > article > ul > li a small {
+#page > section > article > ul > li a small {
   display: block;
   line-height: 40px;
   font-weight: 400;
@@ -178,7 +174,7 @@ body input[type=password] {
   text-overflow: ellipsis;
   color: #a5a5a5;
 }
-#pages > section > article > ul > li a i {
+#page > section > article > ul > li a i {
   position: absolute;
   top: 0;
   right: 0;
@@ -186,68 +182,68 @@ body input[type=password] {
   font-size: 17px;
   color: #a5a5a5;
 }
-#pages > section > article > ul > li a:hover,
-#pages > section > article > ul > li a:active,
-#pages > section > article > ul > li a:focus {
+#page > section > article > ul > li a:hover,
+#page > section > article > ul > li a:active,
+#page > section > article > ul > li a:focus {
   background-color: #f6f6f6;
 }
-#pages > section > article > ul > li a:hover i,
-#pages > section > article > ul > li a:active i,
-#pages > section > article > ul > li a:focus i {
+#page > section > article > ul > li a:hover i,
+#page > section > article > ul > li a:active i,
+#page > section > article > ul > li a:focus i {
   color: #5a5a5a;
 }
-#pages > section > article > div {
+#page > section > article > div {
   height: 100%;
   width: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-#pages > section > article > div > div {
+#page > section > article > div > div {
   margin: 10px;
   padding: 10px;
   background-color: #ffffff;
   border: 1px solid #e4e4e4;
   color: #5a5a5a;
 }
-#pages > section > article ul + div {
+#page > section > article ul + div {
   float: right;
   width: 60%;
 }
-#pages > section > article.page_in_forward {
+#page > section > article.page_in_forward {
   margin-top: 0;
 }
-#pages > section > article.page_out_forward {
+#page > section > article.page_out_forward {
   margin-top: 0;
 }
-#pages > section > article.page_in_backward {
+#page > section > article.page_in_backward {
   margin-top: 0;
 }
-#pages > section > article.page_out_backward {
+#page > section > article.page_out_backward {
   margin-top: 0;
 }
 .compact_only {
   display: none !important;
 }
-#pages,
+#page,
 footer nav {
   width: 1366px;
   margin: 0 auto;
 }
 @media only screen and (max-width: 1366px) {
-  #pages,
+  #page,
   footer nav {
     width: 100%;
   }
 }
 @media only screen and (max-width: 1024px) {
-  #pages article ul,
-  #pages > section article ul {
+  #page article ul,
+  #page > section article ul {
     float: none;
     width: 100%;
     border-right: 0;
   }
-  #pages article ul + div,
-  #pages > section article ul + div {
+  #page article ul + div,
+  #page > section article ul + div {
     float: none;
     width: 100%;
   }

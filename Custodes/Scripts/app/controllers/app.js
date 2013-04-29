@@ -1,15 +1,6 @@
-app.controller('AppCtrl', function AppCtrl($scope, Authentication) {
+app.controller('AppCtrl', function AppCtrl($scope, Authentication, $location) {
 
   $scope.isViewLoading = false;
-
-  $scope.page = 'login';
-
-  $scope.goToPage = function(page, effect_in, effect_out) {
-
-    $scope.page = page;
-
-    //TODO: effect_in, effect_out
-  }
 
   $scope.login = function(email, password) {
 
@@ -19,7 +10,7 @@ app.controller('AppCtrl', function AppCtrl($scope, Authentication) {
         $scope.isViewLoading = true;
         $scope.$broadcast('login', {});
 
-        $scope.goToPage('list');
+        $location.path('/credentials');
       }
       else {
         //TODO: show error stuff here
@@ -32,6 +23,7 @@ app.controller('AppCtrl', function AppCtrl($scope, Authentication) {
     Authentication.logout();
 
     $scope.$broadcast('logout', {});
-    $scope.goToPage('login');
+
+    $location.path('/');
   }
 });

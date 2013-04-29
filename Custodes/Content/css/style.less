@@ -84,7 +84,7 @@ body{
 	}
 }
 
-#pages{
+#page{
 	background: 		@sec_bg;
 	color: 				@sec_text;
 
@@ -100,14 +100,9 @@ body{
 
 	> section{
 		position:           absolute;
-		display:			none;
 		height:             100%;
 		width:				100%;
 		overflow:           hidden;
-
-		&.current_page{
-			display:			block;
-		}
 
 		> header{
 			width:              100%;
@@ -285,7 +280,7 @@ body{
 }
 
 
-#pages,
+#page,
 footer nav{
 	width:              1366px;
 	margin:             0 auto;
@@ -294,7 +289,7 @@ footer nav{
 /* Tablet (landscape, widescreen) - 1024px up to 1366px */
 @media only screen and (max-width: 1366px){
 
-	#pages,
+	#page,
 	footer nav{
 		width:          100%;
 	}
@@ -303,8 +298,8 @@ footer nav{
 /* Tablet (landscape) - 768px up to 1024px */
 @media only screen and (max-width: 1024px){
 
-	#pages,
-	#pages > section{
+	#page,
+	#page > section{
 	//width:          100%;
 
 		article{
@@ -331,8 +326,8 @@ footer nav{
 /* Tablet (portrait) - 480px up to 768px */
 @media only screen and (max-width: 768px){
 
-	#pages,
-	#pages > section{
+	#page,
+	#page > section{
 	//width:          100%;
 	}
 }
@@ -340,8 +335,8 @@ footer nav{
 /* Phones - anything smaller than 480px*/
 @media only screen and (max-width: 480px){
 
-	#pages,
-	#pages > section{
+	#page,
+	#page > section{
 	//width:          100%;
 
 		&.page_in_forward{

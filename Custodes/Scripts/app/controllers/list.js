@@ -1,4 +1,4 @@
-app.controller('ListCtrl', function ListCtrl($scope, Credential) {
+app.controller('ListCtrl', function ListCtrl($scope, Credential, $location) {
 
   //Vars
   $scope.credentials = [];
@@ -45,6 +45,7 @@ app.controller('ListCtrl', function ListCtrl($scope, Credential) {
   $scope.$on('logout', function(event, message) {
     $scope.credentials = [];
     $scope.credential = new Credential();
-    $scope.goToPage('login');
+
+    $location.path('/');
   });
 });
