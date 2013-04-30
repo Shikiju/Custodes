@@ -5,15 +5,11 @@
         <a href="javascript:" class="right icon-th-large" ng-click="logout()"></a>
     </header>
 
-    <div ng-show="isViewLoading" style="margin: 150px 0 0 100px;position:absolute">
-        <img src="Content/img/loading_green.gif" />
-    </div>
-
     <article>
         <ul>
-            <li ng-repeat="credential in credentials | orderBy:'GroupName'">
-                <h2>{{credential.GroupName}}</h2>
-                <a href="javascript:" ng-click="getCredential(credential);">
+            <li ng-repeat="group in groups">
+                <h2>{{group.name}}</h2>
+                <a ng-repeat="credential in group.credentials" href="javascript:" ng-click="getCredential(credential);">
                     <b>{{credential.Name}}</b>
                     <small>{{credential.Login}}</small>
                     <i class="icon-chevron-right"></i>

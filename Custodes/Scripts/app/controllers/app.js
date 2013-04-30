@@ -1,15 +1,24 @@
 app.controller('AppCtrl', function AppCtrl($scope, Authentication, $location) {
 
-  $scope.isViewLoading = false;
+  $scope.loading = false;
+
+  $scope.loadStart = function() {
+    $scope.loading = true;
+  }
+
+  $scope.loadStop = function() {
+    $scope.loading = false;
+  }
 
   $scope.login = function(email, password) {
 
+    //TODO: show loader
+
     Authentication.login(email, password, function(succes, data, status, headers, config) {
 
-      if(succes) {
-        $scope.isViewLoading = true;
-        $scope.$broadcast('login', {});
+      //TODO: hide dialog
 
+      if(succes) {
         $location.path('/credentials');
       }
       else {
