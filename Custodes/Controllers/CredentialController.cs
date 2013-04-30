@@ -41,7 +41,7 @@
             var credential = new Credential();
             using (var connection = this.databaseService.GetOpenConnection())
             {
-                credential = connection.Query<Credential>("SELECT * FROM credentials WHERE id = @id AND userid = @userid", new { id = id, userid = this.User }).FirstOrDefault();
+                credential = connection.Query<Credential>("SELECT * FROM credentials WHERE id = @id AND userid = @userid", new { id = id, userid = this.User.Id }).FirstOrDefault();
             }
 
             return credential;
@@ -80,11 +80,11 @@
         }
 
         [HttpDelete]
-        public void Delete(Credential credential)
+        public void Delete(int id)
         {
             using (var connection = this.databaseService.GetOpenConnection())
             {
-                connection.Execute("DELETE FROM credentials WHERE id = @id ", credential);
+                connection.Execute("DELETE FROM credentials WHERE id = @id AND userid = @userid", new { id = id, userid = this.User.Id });
             }
         }
 

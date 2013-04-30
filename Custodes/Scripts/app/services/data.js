@@ -18,6 +18,10 @@ angular.module('dataService', ['ngResource']).
         return Credential.update({ id: this.Id }, this, cb);
       };
 
+      Credential.prototype.remove = function(cb) {
+        return Credential.remove({ id: this.Id }, this, cb);
+      };
+
       Credential.prototype.destroy = function (cb) {
         return Credential.remove({ id: this.Id }, this, cb);
       };
@@ -37,8 +41,6 @@ angular.module('dataService', ['ngResource']).
         var hashedEmail = CryptoJS.SHA3(email, { outputLength: 256 });
         var hashedPassword = CryptoJS.SHA3(password, { outputLength: 256 });
 
-        console.log(hashedEmail);
-
         $http.defaults.headers.common['Custodes-Email']     = hashedEmail;
         $http.defaults.headers.common['Custodes-Password']  = hashedPassword;
 
@@ -57,6 +59,9 @@ angular.module('dataService', ['ngResource']).
 
       this.logout = function() {
         authorized = false;
+
+        delete $http.defaults.headers.common['Custodes-Email'];
+        delete $http.defaults.headers.common['Custodes-Password'];
       }
 
       return this;

@@ -7,11 +7,6 @@ app.controller('ListCtrl', function ListCtrl($scope, Credential, $location) {
   });
 
 
-  //TMP: dit verhuist uiteindelijk naar een eigen pagina/controller
-  $scope.credential = new Credential();
-  //END TMP
-
-
   //Functions
   $scope.groupCredentials = function() {
 
@@ -55,38 +50,6 @@ app.controller('ListCtrl', function ListCtrl($scope, Credential, $location) {
   }
 
 
-  //TMP: dit verhuist uiteindelijk naar een eigen pagina
-  $scope.getCredential = function(credential) {
-    $scope.credential = new Credential(credential);
-  }
-
-  $scope.saveCredential = function() {
-    //Create
-    if ($scope.credential.Id === undefined) {
-      $scope.credential.create(function() {
-        $scope.credentials = Credential.query();
-      });
-    }
-    //Update
-    else {
-      $scope.credential.update(function() {
-        $scope.credentials = Credential.query();
-      });
-    }
-  }
-
-  $scope.newCredential = function () {
-    $scope.credential = new Credential();
-  }
-
-  $scope.deleteCredential = function () {
-    $scope.credential.remove(function () {
-      $scope.credentials = Credential.query();
-    })
-  }
-  //END TMP
-
-
   //Events
   /*$scope.$on('login', function(event, message) {
     $scope.credentials = Credential.query(function(credentials) {
@@ -99,10 +62,5 @@ app.controller('ListCtrl', function ListCtrl($scope, Credential, $location) {
 
     $scope.groups = [];
     $scope.credentials = [];
-
-
-    //TMP: dit verhuist uiteindelijk naar een eigen pagina
-    $scope.credential = new Credential();
-    //END TMP
   });
 });

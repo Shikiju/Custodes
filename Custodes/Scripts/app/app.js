@@ -3,9 +3,9 @@ var app = angular.module('App', ['dataService']).
   config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.
-        when('/', { templateUrl: 'Content/templates/_login.html', controller: 'LoginCtrl' }).
-        when('/credentials', { templateUrl: 'Content/templates/_list.html', controller: 'ListCtrl' }).
-        when('/credentials/:credentialId/', { templateUrl: 'Content/templates/_detail.html', controller: 'DetailCtrl' }).
+        when('/', { templateUrl: 'Scripts/templates/_login.html', controller: 'LoginCtrl' }).
+        when('/list', { templateUrl: 'Scripts/templates/_list.html', controller: 'ListCtrl' }).
+        when('/credential/:credentialId', { templateUrl: 'Scripts/templates/_detail.html', controller: 'DetailCtrl' }).
         otherwise({ redirectTo: '/' });
 
   }]).
@@ -29,6 +29,6 @@ var app = angular.module('App', ['dataService']).
     });
   }).
   config(['$locationProvider', function($locationProvider) {
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(false);
     $locationProvider.hashPrefix = '!';
   }]);

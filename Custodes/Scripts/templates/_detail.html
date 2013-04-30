@@ -1,27 +1,17 @@
 ﻿<section>
     <header>
-        <a href="javascript:" class="left icon-chevron-left"></a>
+        <a href="#/list" class="left icon-chevron-left"></a>
 
         <a href="javascript:" class="right icon-th-large" ng-click="logout()"></a>
     </header>
 
     <article>
-        <ul>
-            <li ng-repeat="group in groups">
-                <h2>{{group.name}}</h2>
-                <a ng-repeat="credential in group.credentials" href="javascript:" ng-click="getCredential(credential);">
-                    <b>{{credential.Name}}</b>
-                    <small>{{credential.Login}}</small>
-                    <i class="icon-chevron-right"></i>
-                </a>
-            </li>
-        </ul>
         <div>
             <div>
-                <form name="editForm" ng-submit="saveCredential()" novalidate>
+                <form name="editForm" ng-submit="save()" novalidate>
 
                     <label>Name</label><br>
-                    <input type="text" name="name" value="Gmail" ng-model="credential.Name" required><br>
+                    <input type="text" name="name" ng-model="credential.Name" required><br>
                     <div class="error" ng-show="editForm.name.$error.required && editForm.name.$dirty">Required</div>
 
                     <br>
@@ -48,8 +38,8 @@
                     <input type="checkbox" name="favourite" ng-model="credential.IsFavorite"><br>
 
                     <button type="submit">Save</button>
-                    <button ng-click="newCredential();">New</button>
-                    <button ng-click="deleteCredential();">Delete</button>
+                    <button ng-click="new();">New</button>
+                    <button ng-click="delete();">Delete</button>
 
                 </form>
             </div>

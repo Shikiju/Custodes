@@ -19,7 +19,7 @@ app.controller('AppCtrl', function AppCtrl($scope, Authentication, $location) {
       //TODO: hide dialog
 
       if(succes) {
-        $location.path('/credentials');
+        $location.path('/list');
       }
       else {
         //TODO: show error stuff here
