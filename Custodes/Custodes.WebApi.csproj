@@ -181,6 +181,7 @@
     <Content Include="Scripts\lib\angular.min.js" />
     <Content Include="Scripts\lib\cryptojsSHA3-3.1.2.js" />
     <Content Include="Scripts\lib\html5shiv.min.js" />
+    <Content Include="Scripts\lib\less.js" />
     <Content Include="Scripts\lib\jquery.min.js" />
     <Content Include="Scripts\lib\modernizr.min.js" />
     <Content Include="Scripts\lib\respond.min.js" />
