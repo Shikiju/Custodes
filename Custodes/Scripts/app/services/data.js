@@ -34,9 +34,10 @@ angular.module('dataService', ['ngResource']).
 
       this.login = function(email, password, callback) {
 
-        //TODO: Hashing
-        var hashedEmail     = email;
-        var hashedPassword  = password;
+        var hashedEmail = CryptoJS.SHA3(email, { outputLength: 256 });
+        var hashedPassword = CryptoJS.SHA3(password, { outputLength: 256 });
+
+        console.log(hashedEmail);
 
         $http.defaults.headers.common['Custodes-Email']     = hashedEmail;
         $http.defaults.headers.common['Custodes-Password']  = hashedPassword;
