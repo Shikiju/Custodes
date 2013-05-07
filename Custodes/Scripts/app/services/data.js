@@ -1,5 +1,5 @@
 angular.module('dataService', ['ngResource']).
-    factory('Credential', function($resource) {
+    factory('Credential', function ($resource, $rootScope, Authentication) {
 
       var self = this;
 
@@ -10,16 +10,39 @@ angular.module('dataService', ['ngResource']).
           }
       );
 
-      Credential.prototype.create = function(cb) {
+      Credential.queryDecrypt = function (cb) {
+
+        Credential.query(function (results) {
+
+          //Loop door encrypted results
+          for (var i = 0; i < results.length; i++) {
+            results[i]['Name'] = CryptoJS.AES.decrypt(results[i].Name, Authentication.requestPassword()).toString(CryptoJS.enc.Utf8);
+            results[i]['Login'] = CryptoJS.AES.decrypt(results[i].Login, Authentication.requestPassword()).toString(CryptoJS.enc.Utf8);
+            results[i]['Password'] = CryptoJS.AES.decrypt(results[i].Password, Authentication.requestPassword()).toString(CryptoJS.enc.Utf8);
+          }
+
+          cb(results);
+        });
+      };
+
+      Credential.prototype.create = function (cb) {
+        var encrypted = CryptoJS.AES.encrypt(this.Name, Authentication.requestPassword());
+        this.Name = encrypted.toString();
+        encrypted = CryptoJS.AES.encrypt(this.Login, Authentication.requestPassword());
+        this.Login = encrypted.toString();
+        encrypted = CryptoJS.AES.encrypt(this.Password, Authentication.requestPassword());
+        this.Password = encrypted.toString();
         return Credential.create({}, this, cb);
       };
 
-      Credential.prototype.update = function(cb) {
+      Credential.prototype.update = function (cb) {
+        var encrypted = CryptoJS.AES.encrypt(this.Name, Authentication.requestPassword());
+        this.Name = encrypted.toString();
+        encrypted = CryptoJS.AES.encrypt(this.Login, Authentication.requestPassword());
+        this.Login = encrypted.toString();
+        encrypted = CryptoJS.AES.encrypt(this.Password, Authentication.requestPassword());
+        this.Password = encrypted.toString();
         return Credential.update({ id: this.Id }, this, cb);
-      };
-
-      Credential.prototype.remove = function(cb) {
-        return Credential.remove({ id: this.Id }, this, cb);
       };
 
       Credential.prototype.destroy = function (cb) {
@@ -31,9 +54,16 @@ angular.module('dataService', ['ngResource']).
     factory('Authentication', function($http) {
 
       var authorized = false;
+      var unencryptedPasswordKey;
+
+      var self = this;
 
       this.isAuthorized = function() {
         return authorized;
+      }
+
+      this.requestPassword = function () {
+        return unencryptedPasswordKey;
       }
 
       this.login = function(email, password, callback) {
@@ -48,6 +78,7 @@ angular.module('dataService', ['ngResource']).
           success(function(data, status, headers, config) {
 
             authorized = true;
+            self.unencryptedPasswordKey = password;
             callback(true, data, status, headers, config);
           }).
           error(function(data, status, headers, config) {
@@ -59,9 +90,8 @@ angular.module('dataService', ['ngResource']).
 
       this.logout = function() {
         authorized = false;
-
-        delete $http.defaults.headers.common['Custodes-Email'];
-        delete $http.defaults.headers.common['Custodes-Password'];
+        $http.defaults.headers.common['Custodes-Email'] = '';
+        $http.defaults.headers.common['Custodes-Password'] = '';
       }
 
       return this;

@@ -1,6 +1,6 @@
 var app = angular.module('App', ['dataService']).
 
-  config(['$routeProvider', function($routeProvider) {
+  config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider.
         when('/', { templateUrl: 'Scripts/templates/_login.html', controller: 'LoginCtrl' }).
@@ -9,10 +9,10 @@ var app = angular.module('App', ['dataService']).
         otherwise({ redirectTo: '/' });
 
   }]).
-  run(function($rootScope, $location, Authentication) {
+  run(function ($rootScope, $location, Authentication) {
 
     //Unfortunately the default routing doesnt provide for authentication, so we have this little workaround
-    $rootScope.$on('$routeChangeStart', function(event, next, current) {
+    $rootScope.$on('$routeChangeStart', function (event, next, current) {
 
       //Check if there is an authorized user
       if (!Authentication.isAuthorized()) {
@@ -28,7 +28,15 @@ var app = angular.module('App', ['dataService']).
       }
     });
   }).
-  config(['$locationProvider', function($locationProvider) {
+  config(['$locationProvider', function ($locationProvider) {
     $locationProvider.html5Mode(false);
     $locationProvider.hashPrefix = '!';
   }]);
+
+app.factory('loadService', function ($rootScope) {
+  var loadService = {};
+
+  loadService.message = '';
+
+  return loadService;
+});

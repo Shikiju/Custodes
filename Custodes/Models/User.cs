@@ -9,6 +9,6 @@
     {
         public int Id { get; set; }
         public string HashedEmail { get; set; }
-        public string HashedVeriificationPassword { get; set; }
+        public string HashedPassword { get; set; }
     }
 }
