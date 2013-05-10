@@ -14,7 +14,6 @@ angular.module('dataService', ['ngResource']).
 
         Credential.query(function (results) {
 
-          //Loop door encrypted results
           for (var i = 0; i < results.length; i++) {
             results[i]['Name'] = CryptoJS.AES.decrypt(results[i].Name, Authentication.requestPassword()).toString(CryptoJS.enc.Utf8);
             results[i]['Login'] = CryptoJS.AES.decrypt(results[i].Login, Authentication.requestPassword()).toString(CryptoJS.enc.Utf8);
@@ -22,6 +21,15 @@ angular.module('dataService', ['ngResource']).
           }
 
           cb(results);
+        });
+      };
+
+
+      Credential.getDecrypt = function (params) {
+        return Credential.get(params, function (result) {
+          result.Name = CryptoJS.AES.decrypt(result.Name, Authentication.requestPassword()).toString(CryptoJS.enc.Utf8);
+          result.Login = CryptoJS.AES.decrypt(result.Login, Authentication.requestPassword()).toString(CryptoJS.enc.Utf8);
+          result.Password = CryptoJS.AES.decrypt(result.Password, Authentication.requestPassword()).toString(CryptoJS.enc.Utf8);
         });
       };
 
@@ -54,7 +62,7 @@ angular.module('dataService', ['ngResource']).
     factory('Authentication', function($http) {
 
       var authorized = false;
-      var unencryptedPasswordKey;
+      this.unencryptedPasswordKey;
 
       var self = this;
 
@@ -63,7 +71,7 @@ angular.module('dataService', ['ngResource']).
       }
 
       this.requestPassword = function () {
-        return unencryptedPasswordKey;
+        return self.unencryptedPasswordKey;
       }
 
       this.login = function(email, password, callback) {

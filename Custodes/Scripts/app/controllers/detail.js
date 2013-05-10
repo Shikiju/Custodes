@@ -2,7 +2,7 @@
 
   //Vars
   if ($routeParams.credentialId > 0) {
-    $scope.credential = Credential.get({ id: $routeParams.credentialId });
+    $scope.credential = Credential.getDecrypt({ id: $routeParams.credentialId });
   }
   else {
     $scope.credential = new Credential();
