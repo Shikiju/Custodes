@@ -19,14 +19,14 @@
     //Create
     if ($scope.credential.Id === undefined) {
 
-      $scope.credential.create(function() {
+      $scope.credential.createEncrypt(function () {
         $location.path('/list');
       });
     }
     //Update
     else {
 
-      $scope.credential.update(function() {
+      $scope.credential.updateEncrypt(function() {
         $location.path('/list');
       });
     }

@@ -11,7 +11,6 @@ angular.module('dataService', ['ngResource']).
       );
 
       Credential.queryDecrypt = function (cb) {
-
         Credential.query(function (results) {
 
           for (var i = 0; i < results.length; i++) {
@@ -33,7 +32,7 @@ angular.module('dataService', ['ngResource']).
         });
       };
 
-      Credential.prototype.create = function (cb) {
+      Credential.createEncrypt = function (cb) {
         var encrypted = CryptoJS.AES.encrypt(this.Name, Authentication.requestPassword());
         this.Name = encrypted.toString();
         encrypted = CryptoJS.AES.encrypt(this.Login, Authentication.requestPassword());
@@ -43,7 +42,7 @@ angular.module('dataService', ['ngResource']).
         return Credential.create({}, this, cb);
       };
 
-      Credential.prototype.update = function (cb) {
+      Credential.updateEncrypt = function (cb) {
         var encrypted = CryptoJS.AES.encrypt(this.Name, Authentication.requestPassword());
         this.Name = encrypted.toString();
         encrypted = CryptoJS.AES.encrypt(this.Login, Authentication.requestPassword());
